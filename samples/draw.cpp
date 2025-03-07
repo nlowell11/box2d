@@ -1453,7 +1453,7 @@ void Draw::DrawCircle( b2Vec2 center, float radius, b2HexColor color )
 void Draw::DrawSolidCircle( b2Transform transform, b2Vec2 center, float radius, b2HexColor color )
 {
 	transform.p = b2TransformPoint( transform, center );
-	m_solidCircles->AddCircle( transform, radius, color );
+	m_solidCircles->AddCircle( transform, radius, color);
 }
 
 void Draw::DrawSolidCapsule( b2Vec2 p1, b2Vec2 p2, float radius, b2HexColor color )

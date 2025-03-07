@@ -63,6 +63,8 @@ target_include_directories(jsmn INTERFACE ${JSMN_DIR})
 set(BOX2D_SAMPLE_FILES
 	car.cpp
 	car.h
+	creature.cpp
+	creature.h
 	donut.cpp
 	donut.h
 	doohickey.cpp
@@ -78,6 +80,7 @@ set(BOX2D_SAMPLE_FILES
 	sample_continuous.cpp
 	sample_determinism.cpp
 	sample_events.cpp
+	sample_evolution.cpp
 	sample_geometry.cpp
 	sample_joints.cpp
 	sample_robustness.cpp

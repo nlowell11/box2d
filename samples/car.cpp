@@ -42,6 +42,7 @@ void Car::Spawn( b2WorldId worldId, b2Vec2 position, float scale, float hertz, f
 	b2ShapeDef shapeDef = b2DefaultShapeDef();
 	shapeDef.density = 1.0f / scale;
 	shapeDef.friction = 0.2f;
+	shapeDef.customColor = b2_colorChocolate;
 
 	b2Circle circle = { { 0.0f, 0.0f }, 0.4f * scale };
 
@@ -50,16 +51,19 @@ void Car::Spawn( b2WorldId worldId, b2Vec2 position, float scale, float hertz, f
 	bodyDef.position = b2Add( { 0.0f, 1.0f * scale }, position );
 	m_chassisId = b2CreateBody( worldId, &bodyDef );
 	b2CreatePolygonShape( m_chassisId, &shapeDef, &chassis );
-
+	
 	shapeDef.density = 2.0f / scale;
 	shapeDef.friction = 1.5f;
 	shapeDef.rollingResistance = 0.1f;
+
+	shapeDef.customColor = b2_colorDodgerBlue;
 
 	bodyDef.position = b2Add( { -1.0f * scale, 0.35f * scale }, position );
 	bodyDef.allowFastRotation = true;
 	m_rearWheelId = b2CreateBody( worldId, &bodyDef );
 	b2CreateCircleShape( m_rearWheelId, &shapeDef, &circle );
-
+	
+	
 	bodyDef.position = b2Add( { 1.0f * scale, 0.4f * scale }, position );
 	bodyDef.allowFastRotation = true;
 	m_frontWheelId = b2CreateBody( worldId, &bodyDef );
